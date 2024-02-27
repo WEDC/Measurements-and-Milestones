@@ -136,6 +136,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Can_WEDC_Implement__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Cert_Bankruptcy__c</picklist>
         <values>
             <fullName>No</fullName>
@@ -658,6 +669,28 @@
         </values>
         <values>
             <fullName>Minimal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IsLoan__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_Business_or_Community_Application__c</picklist>
+        <values>
+            <fullName>Business Application</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community Application</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -2126,6 +2159,21 @@
         </values>
         <values>
             <fullName>Waiver</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Program_Type__c</picklist>
+        <values>
+            <fullName>Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Credit</fullName>
             <default>false</default>
         </values>
     </picklistValues>
