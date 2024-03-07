@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Segment_and_Population__c</fullName>
+    <description>What economic need will this change be designed to address? Who are the target recipients, and how are they uniquely positioned to take advantage of this program?</description>
+    <externalId>false</externalId>
+    <label>Opportunity Segment and Population</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>4</visibleLines>
+</CustomField>
