@@ -200,22 +200,7 @@
     <summaryLayout>
         <masterLabel>00hDL000009i8U1</masterLabel>
         <sizeX>3</sizeX>
-        <sizeY>4</sizeY>
-        <summaryLayoutItems>
-            <field>ContactId</field>
-            <posX>0</posX>
-            <posY>0</posY>
-        </summaryLayoutItems>
-        <summaryLayoutItems>
-            <field>AccountId</field>
-            <posX>0</posX>
-            <posY>1</posY>
-        </summaryLayoutItems>
-        <summaryLayoutItems>
-            <field>ContactPhone</field>
-            <posX>0</posX>
-            <posY>2</posY>
-        </summaryLayoutItems>
+        <sizeY>2</sizeY>
         <summaryLayoutItems>
             <field>CaseNumber</field>
             <posX>1</posX>
@@ -225,31 +210,6 @@
             <field>CreatedDate</field>
             <posX>1</posX>
             <posY>1</posY>
-        </summaryLayoutItems>
-        <summaryLayoutItems>
-            <field>Subject</field>
-            <posX>1</posX>
-            <posY>2</posY>
-        </summaryLayoutItems>
-        <summaryLayoutItems>
-            <field>Description</field>
-            <posX>1</posX>
-            <posY>3</posY>
-        </summaryLayoutItems>
-        <summaryLayoutItems>
-            <field>Status</field>
-            <posX>2</posX>
-            <posY>0</posY>
-        </summaryLayoutItems>
-        <summaryLayoutItems>
-            <field>Priority</field>
-            <posX>2</posX>
-            <posY>1</posY>
-        </summaryLayoutItems>
-        <summaryLayoutItems>
-            <field>OwnerId</field>
-            <posX>2</posX>
-            <posY>2</posY>
         </summaryLayoutItems>
         <summaryLayoutStyle>CaseInteraction</summaryLayoutStyle>
     </summaryLayout>
