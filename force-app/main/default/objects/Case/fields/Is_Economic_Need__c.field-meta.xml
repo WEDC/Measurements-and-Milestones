@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Economic_Need__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Do existing programs or entities (outside WEDC) meet this economic need? If yes, explain the differences between your proposal and the existing programs or entities meeting the economic need.</description>
+    <externalId>false</externalId>
+    <label>Is Economic Need</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
