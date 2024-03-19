@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Case</entityName>
+    <fieldName>New_Program_Proposal_Status__c</fieldName>
+    <masterLabel>New Program Proposal</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;The Statement of Need needs approval from your Divisional VP&lt;/p&gt;</info>
+        <picklistValueName>Division VP Approval 1</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;The Statement of Need needs approval from your Divisional VP&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Division VP Approval 2</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>OwnerId</fieldNames>
+        <fieldNames>Program_Name__c</fieldNames>
+        <fieldNames>Due_Date__c</fieldNames>
+        <info>&lt;p&gt;Please fill out the Statement of Need form below to start the process of submitting a New Program Proposal&lt;/p&gt;</info>
+        <picklistValueName>New Program Proposal</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;The Statement of Need needs approval from the Steering Commitee&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Steering Committee Approval 1</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;The Statement of Need needs approval from the Steering Committee&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Steering Committee Approval 2</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>New_Program_Proposal</recordTypeName>
+</PathAssistant>
