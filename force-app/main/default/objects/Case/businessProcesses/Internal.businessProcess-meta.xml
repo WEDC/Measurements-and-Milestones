@@ -3,23 +3,7 @@
     <fullName>Internal</fullName>
     <isActive>true</isActive>
     <values>
-        <fullName>AAC</fullName>
-        <default>false</default>
-    </values>
-    <values>
-        <fullName>Board Approval</fullName>
-        <default>false</default>
-    </values>
-    <values>
         <fullName>Closed</fullName>
-        <default>false</default>
-    </values>
-    <values>
-        <fullName>Division VP Approval</fullName>
-        <default>false</default>
-    </values>
-    <values>
-        <fullName>Investment Development</fullName>
         <default>false</default>
     </values>
     <values>
@@ -32,14 +16,6 @@
     </values>
     <values>
         <fullName>Pending</fullName>
-        <default>false</default>
-    </values>
-    <values>
-        <fullName>Steering Committee Approval</fullName>
-        <default>false</default>
-    </values>
-    <values>
-        <fullName>Working Group Approval</fullName>
         <default>false</default>
     </values>
 </BusinessProcess>
