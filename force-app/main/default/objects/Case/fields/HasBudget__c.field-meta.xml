@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Is_Economic_Need__c</fullName>
-    <description>Do existing programs or entities (outside WEDC) meet this economic need? If yes, explain the differences between your proposal and the existing programs or entities meeting the economic need.</description>
+    <fullName>HasBudget__c</fullName>
+    <description>Training Request Record Type - Is there a budget for this?</description>
     <externalId>false</externalId>
-    <label>Is Economic Need</label>
+    <inlineHelpText>Is there a budget for this?</inlineHelpText>
+    <label>HasBudget</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
