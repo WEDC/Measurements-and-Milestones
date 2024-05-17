@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Case</entityName>
+    <fieldName>New_Program_Proposal_Status__c</fieldName>
+    <masterLabel>Change Program Path</masterLabel>
+    <recordTypeName>Change_to_a_Program_Proposal</recordTypeName>
+</PathAssistant>

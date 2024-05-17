@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Deliverable_Output__c</fullName>
+    <fullName>Can_WEDC_Implement_Reason__c</fullName>
     <externalId>false</externalId>
-    <label>Deliverable Output</label>
+    <label>Can WEDC Implement Reason</label>
     <length>32768</length>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>LongTextArea</type>
-    <visibleLines>3</visibleLines>
+    <visibleLines>4</visibleLines>
 </CustomField>

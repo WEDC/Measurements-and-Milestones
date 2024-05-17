@@ -3,6 +3,7 @@
     <fullName>Change_to_a_Program_Proposal</fullName>
     <active>true</active>
     <businessProcess>Internal</businessProcess>
+    <compactLayoutAssignment>Program_Case</compactLayoutAssignment>
     <description>Changes to a Program case record type</description>
     <label>Change to a Program Proposal</label>
     <picklistValues>
@@ -52,6 +53,21 @@
         </values>
         <values>
             <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Award_Type__c</picklist>
+        <values>
+            <fullName>Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Credit</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -662,6 +678,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>HasBudget__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Impact_Level__c</picklist>
         <values>
             <fullName>Impactful</fullName>
@@ -695,7 +722,51 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Is_there_a_budget_for_this__c</picklist>
+        <picklist>Is_Competetive__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_Economic_Need__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_Pass_Through__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_Statutory_Program__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_Variation_or_Sub_Program__c</picklist>
         <values>
             <fullName>No</fullName>
             <default>false</default>
@@ -785,6 +856,49 @@
         <values>
             <fullName>WEDC</fullName>
             <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>New_Program_Proposal_Status__c</picklist>
+        <values>
+            <fullName>AAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Board Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Division VP Approval 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Division VP Approval 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investment Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Program Proposal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Steering Committee Approval 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Steering Committee Approval 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Working Group Approval</fullName>
+            <default>false</default>
         </values>
     </picklistValues>
     <picklistValues>
@@ -2159,21 +2273,6 @@
         </values>
         <values>
             <fullName>Waiver</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Program_Type__c</picklist>
-        <values>
-            <fullName>Grant</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Loan</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Tax Credit</fullName>
             <default>false</default>
         </values>
     </picklistValues>

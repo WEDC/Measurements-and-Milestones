@@ -3,7 +3,7 @@
     <active>true</active>
     <entityName>Case</entityName>
     <fieldName>New_Program_Proposal_Status__c</fieldName>
-    <masterLabel>New Program Proposal</masterLabel>
+    <masterLabel>Program Path</masterLabel>
     <pathAssistantSteps>
         <info>&lt;p&gt;The Statement of Need needs approval from your Divisional VP&lt;/p&gt;</info>
         <picklistValueName>Division VP Approval 1</picklistValueName>

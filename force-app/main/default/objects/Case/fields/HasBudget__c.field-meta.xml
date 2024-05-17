@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Program_Type__c</fullName>
+    <fullName>HasBudget__c</fullName>
+    <description>Training Request Record Type - Is there a budget for this?</description>
     <externalId>false</externalId>
-    <label>Program Type</label>
+    <inlineHelpText>Is there a budget for this?</inlineHelpText>
+    <label>HasBudget</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Grant</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
-                <label>Grant</label>
+                <label>Yes</label>
             </value>
             <value>
-                <fullName>Tax Credit</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
-                <label>Tax Credit</label>
-            </value>
-            <value>
-                <fullName>Loan</fullName>
-                <default>false</default>
-                <label>Loan</label>
+                <label>No</label>
             </value>
         </valueSetDefinition>
     </valueSet>
