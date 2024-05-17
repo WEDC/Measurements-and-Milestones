@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>New_Program_Proposal_Status__c</fullName>
     <externalId>false</externalId>
-    <label>Program Status</label>
+    <label>New Program Proposal Status</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
