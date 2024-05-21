@@ -583,11 +583,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Case.Decision_Notes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Case.Delivery_DateTime__c</field>
         <readable>true</readable>
     </fieldPermissions>
