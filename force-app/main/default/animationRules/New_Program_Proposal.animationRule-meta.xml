@@ -3,10 +3,10 @@
     <animationFrequency>rarely</animationFrequency>
     <developerName>New_Program_Proposal</developerName>
     <isActive>true</isActive>
-    <masterLabel>New Program Proposal</masterLabel>
+    <masterLabel>Program Path</masterLabel>
     <recordTypeContext>Custom</recordTypeContext>
     <recordTypeName>New_Program_Proposal</recordTypeName>
     <sobjectType>Case</sobjectType>
     <targetField>New_Program_Proposal_Status__c</targetField>
-    <targetFieldChangeToValues>Board Approval</targetFieldChangeToValues>
+    <targetFieldChangeToValues>Closed</targetFieldChangeToValues>
 </AnimationRule>
