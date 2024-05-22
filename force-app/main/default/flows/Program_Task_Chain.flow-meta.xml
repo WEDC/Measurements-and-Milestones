@@ -67,7 +67,7 @@
     <actionCalls>
         <name>Case_Closed_Email</name>
         <label>Case Closed Email</label>
-        <locationX>2778</locationX>
+        <locationX>2866</locationX>
         <locationY>4091</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
@@ -99,7 +99,7 @@
     <actionCalls>
         <name>Case_Closed_Notification</name>
         <label>Case Closed Notification</label>
-        <locationX>2778</locationX>
+        <locationX>2866</locationX>
         <locationY>4199</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
@@ -738,7 +738,7 @@
     <assignments>
         <name>Add_ID_to_Variable</name>
         <label>Add ID to Variable</label>
-        <locationX>2184</locationX>
+        <locationX>2272</locationX>
         <locationY>2135</locationY>
         <assignmentItems>
             <assignToReference>SteeringCommitteeMemberID</assignToReference>
@@ -754,7 +754,7 @@
     <assignments>
         <name>Assign_ID_of_Members</name>
         <label>Assign ID of Members</label>
-        <locationX>2184</locationX>
+        <locationX>2272</locationX>
         <locationY>2843</locationY>
         <assignmentItems>
             <assignToReference>WorkingGroupMemberID</assignToReference>
@@ -770,7 +770,7 @@
     <assignments>
         <name>Assigning_Email_and_IDs_to_a_Collection</name>
         <label>Assigning Email and IDs to a Collection</label>
-        <locationX>2184</locationX>
+        <locationX>2272</locationX>
         <locationY>1727</locationY>
         <assignmentItems>
             <assignToReference>SystemOwnerEmailCollection</assignToReference>
@@ -793,7 +793,7 @@
     <assignments>
         <name>Case_Owner_Assignments</name>
         <label>Case Owner Assignments</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>1919</locationY>
         <assignmentItems>
             <assignToReference>CaseOwner</assignToReference>
@@ -809,7 +809,7 @@
     <assignments>
         <name>Close_the_Case</name>
         <label>Close the Case</label>
-        <locationX>2778</locationX>
+        <locationX>2866</locationX>
         <locationY>3983</locationY>
         <assignmentItems>
             <assignToReference>Get_Case_Records.New_Program_Proposal_Status__c</assignToReference>
@@ -825,7 +825,7 @@
     <assignments>
         <name>Email_Collection_for_SISC</name>
         <label>Email Collection for SISC</label>
-        <locationX>2184</locationX>
+        <locationX>2272</locationX>
         <locationY>2543</locationY>
         <assignmentItems>
             <assignToReference>SteeringCommitteeMembersEmail</assignToReference>
@@ -841,7 +841,7 @@
     <assignments>
         <name>EmailList_for_Working_Group_Assignment</name>
         <label>EmailList for Working Group Assignment</label>
-        <locationX>2184</locationX>
+        <locationX>2272</locationX>
         <locationY>3251</locationY>
         <assignmentItems>
             <assignToReference>WorkingGroupEmailList</assignToReference>
@@ -992,7 +992,7 @@
     <decisions>
         <name>Is_Rework_or_Declined_Submission</name>
         <label>Is Rework or Declined Submission</label>
-        <locationX>2690</locationX>
+        <locationX>2734</locationX>
         <locationY>3767</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -1029,7 +1029,7 @@
     <decisions>
         <name>Is_Task_Completed_AND_Reviewed_Accepted</name>
         <label>Is Task Completed AND Reviewed Accepted</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>3659</locationY>
         <defaultConnectorLabel>Default</defaultConnectorLabel>
         <rules>
@@ -1087,7 +1087,7 @@
     <decisions>
         <name>Right_Record_Type</name>
         <label>Right Record Type?</label>
-        <locationX>2745</locationX>
+        <locationX>2921</locationX>
         <locationY>431</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -1363,7 +1363,7 @@
     <loops>
         <name>Email_List_SISC</name>
         <label>Email List SISC</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>2435</locationY>
         <collectionReference>Get_User_from_the_SISC_Queue</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -1377,7 +1377,7 @@
     <loops>
         <name>EmailList_for_Working_Group</name>
         <label>EmailList for Working Group</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>3143</locationY>
         <collectionReference>Get_Working_Group_Users</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -1391,7 +1391,7 @@
     <loops>
         <name>Get_MemberID_Working_Group</name>
         <label>Get MemberID Working Group</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>2735</locationY>
         <collectionReference>Get_Queue_Members_Working_Group</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -1405,7 +1405,7 @@
     <loops>
         <name>ID_Collection_Loop_System_Owners</name>
         <label>ID Collection Loop - System Owners</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>1619</locationY>
         <collectionReference>Get_System_Owner_Records</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -1419,7 +1419,7 @@
     <loops>
         <name>Member_ID_Steering_Committee</name>
         <label>Member ID Steering Committee</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>2027</locationY>
         <collectionReference>Get_Queue_Members_Steering_Committee</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -1818,7 +1818,7 @@
         <inputAssignments>
             <field>RecordTypeId</field>
             <value>
-                <stringValue>012DL000006TsYDYA0</stringValue>
+                <elementReference>Get_Task_Record_Type.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1994,7 +1994,7 @@
     <recordLookups>
         <name>Division_VP_Record</name>
         <label>Division VP Record</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>3443</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2015,7 +2015,7 @@
     <recordLookups>
         <name>Get_Case_Records</name>
         <label>Get Case Records</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>755</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2036,7 +2036,7 @@
     <recordLookups>
         <name>Get_Custom_Notification_Record</name>
         <label>Get Custom Notification Record</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>3551</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2057,7 +2057,7 @@
     <recordLookups>
         <name>Get_EnABLE_System_Integration_User</name>
         <label>Get EnABLE System Integration User</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>1295</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2078,7 +2078,7 @@
     <recordLookups>
         <name>Get_Intacct_System_Integration_User</name>
         <label>Get Intacct System Integration User</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>1403</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2099,7 +2099,7 @@
     <recordLookups>
         <name>Get_Program_Hub_Integration_User</name>
         <label>Get Program Hub Integration User</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>1079</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2120,7 +2120,7 @@
     <recordLookups>
         <name>Get_Queue_Members_Steering_Committee</name>
         <label>Get Queue Members Steering Committee</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>863</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2141,7 +2141,7 @@
     <recordLookups>
         <name>Get_Queue_Members_Working_Group</name>
         <label>Get Queue Members Working Group</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>971</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2162,7 +2162,7 @@
     <recordLookups>
         <name>Get_Salesforce_Integration_User</name>
         <label>Get Salesforce Integration User</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>1187</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2183,7 +2183,7 @@
     <recordLookups>
         <name>Get_Steering_Committee_Queue</name>
         <label>Get Steering Committee Queue</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2211,7 +2211,7 @@
     <recordLookups>
         <name>Get_System_Owner_Records</name>
         <label>Get System Owner Records</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>1511</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2224,7 +2224,7 @@
     <recordLookups>
         <name>Get_Task_Record_Type</name>
         <label>Get Task Record Type</label>
-        <locationX>2745</locationX>
+        <locationX>2921</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2245,7 +2245,7 @@
     <recordLookups>
         <name>Get_User_from_the_SISC_Queue</name>
         <label>Get User from the SISC Queue</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>2327</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2267,7 +2267,7 @@
         <description>Gets the queu</description>
         <name>Get_Working_Group_Queue</name>
         <label>Get Working Group Queue</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>647</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2295,7 +2295,7 @@
     <recordLookups>
         <name>Get_Working_Group_Users</name>
         <label>Get Working Group Users</label>
-        <locationX>2096</locationX>
+        <locationX>2184</locationX>
         <locationY>3035</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2373,7 +2373,7 @@
         <description>Update the completion date, time and completed by for all task records that come in</description>
         <name>Update_Declined_Submission_Completion_Info</name>
         <label>Update Declined Submission Completion Info</label>
-        <locationX>2778</locationX>
+        <locationX>2866</locationX>
         <locationY>3875</locationY>
         <connector>
             <targetReference>Close_the_Case</targetReference>
@@ -2407,7 +2407,7 @@
     <recordUpdates>
         <name>Update_the_Case_Status_to_Closed</name>
         <label>Update the Case Status to Closed</label>
-        <locationX>2778</locationX>
+        <locationX>2866</locationX>
         <locationY>4307</locationY>
         <inputReference>Get_Case_Records</inputReference>
     </recordUpdates>
@@ -2447,7 +2447,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>2619</locationX>
+        <locationX>2795</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Task_Record_Type</targetReference>
