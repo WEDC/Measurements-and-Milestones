@@ -437,10 +437,54 @@
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
+        <name>Notify_Case_Owner</name>
+        <label>Notify Case Owner</label>
+        <locationX>314</locationX>
+        <locationY>4091</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <connector>
+            <targetReference>Notifying_the_Working_Group</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Custom_Notification_Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>CaseOwner</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Investment Development is now available!</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <stringValue>Investment Development form can be accessed now</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>Get_Case_Records.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
         <name>Notifying_the_Working_Group</name>
         <label>Notifying the Working Group</label>
         <locationX>314</locationX>
-        <locationY>4091</locationY>
+        <locationY>4199</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -899,7 +943,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Notifying_the_Working_Group</targetReference>
+            <targetReference>Notify_Case_Owner</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -1587,7 +1631,7 @@
         <inputAssignments>
             <field>RecordTypeId</field>
             <value>
-                <stringValue>012DL000006TsYDYA0</stringValue>
+                <elementReference>Get_Task_Record_Type.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1967,7 +2011,7 @@
         <inputAssignments>
             <field>RecordTypeId</field>
             <value>
-                <stringValue>012DL000006TsYDYA0</stringValue>
+                <elementReference>Get_Task_Record_Type.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
