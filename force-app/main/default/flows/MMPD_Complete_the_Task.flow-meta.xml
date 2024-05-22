@@ -4,7 +4,7 @@
         <name>Refresh</name>
         <label>Refresh</label>
         <locationX>732</locationX>
-        <locationY>2282</locationY>
+        <locationY>2174</locationY>
         <actionName>c:localRefresh</actionName>
         <actionType>component</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -567,7 +567,7 @@
         <locationX>754</locationX>
         <locationY>1814</locationY>
         <connector>
-            <targetReference>Copy_1_of_TaskCompletedScreen</targetReference>
+            <targetReference>Refresh</targetReference>
         </connector>
         <inputReference>Get_Task_Records</inputReference>
     </recordUpdates>
@@ -577,7 +577,7 @@
         <locationX>1282</locationX>
         <locationY>566</locationY>
         <connector>
-            <targetReference>TaskCompletedScreen</targetReference>
+            <targetReference>Refresh</targetReference>
         </connector>
         <inputReference>Get_Task_Records</inputReference>
     </recordUpdates>
@@ -587,48 +587,10 @@
         <locationX>50</locationX>
         <locationY>782</locationY>
         <connector>
-            <targetReference>Copy_2_of_TaskCompletedScreen</targetReference>
+            <targetReference>Refresh</targetReference>
         </connector>
         <inputReference>Get_Task_Records</inputReference>
     </recordUpdates>
-    <screens>
-        <name>Copy_1_of_TaskCompletedScreen</name>
-        <label>Copy 1 of TaskCompletedScreen</label>
-        <locationX>754</locationX>
-        <locationY>1922</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <connector>
-            <targetReference>Refresh</targetReference>
-        </connector>
-        <fields>
-            <name>Copy_1_of_TaskCompletedText</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px;&quot;&gt;Task has been marked complete!&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
-        <name>Copy_2_of_TaskCompletedScreen</name>
-        <label>Copy 2 of TaskCompletedScreen</label>
-        <locationX>50</locationX>
-        <locationY>890</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <connector>
-            <targetReference>Refresh</targetReference>
-        </connector>
-        <fields>
-            <name>Copy_2_of_TaskCompletedText</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px;&quot;&gt;Task has been marked complete!&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
     <screens>
         <name>prior_Task_Incomplete_Screen</name>
         <label>prior Task Incomplete Screen</label>
@@ -701,25 +663,6 @@
                     </rightValue>
                 </conditions>
             </visibilityRule>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
-        <name>TaskCompletedScreen</name>
-        <label>TaskCompletedScreen</label>
-        <locationX>1282</locationX>
-        <locationY>674</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <connector>
-            <targetReference>Refresh</targetReference>
-        </connector>
-        <fields>
-            <name>TaskCompletedText</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px;&quot;&gt;Task has been marked complete!&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
