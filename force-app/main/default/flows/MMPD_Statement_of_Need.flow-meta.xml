@@ -1016,7 +1016,7 @@
             <inputParameters>
                 <name>value</name>
                 <value>
-                    <elementReference>Get_Case_Record.Target_Audience__c</elementReference>
+                    <elementReference>Get_Case_Record.Target_Audience_Benefiting__c</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
