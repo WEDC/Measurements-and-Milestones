@@ -46,6 +46,22 @@
     </actionCalls>
     <apiVersion>60.0</apiVersion>
     <assignments>
+        <name>assigning_division_VP</name>
+        <label>assigning division VP</label>
+        <locationX>446</locationX>
+        <locationY>1214</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Case_Record.Division_Lookup__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DivisionVP_LookUp.recordId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Task_Record_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <description>Storing the field values by assigning them to a variable - record type</description>
         <name>Assigning_the_form_values</name>
         <label>Assigning the form values</label>
@@ -135,15 +151,8 @@
                 <elementReference>TargetAudience.value</elementReference>
             </value>
         </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_Case_Record.Division_VP__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>DivisionVP_LookUp.recordId</elementReference>
-            </value>
-        </assignmentItems>
         <connector>
-            <targetReference>Updating_Field_Values</targetReference>
+            <targetReference>Submit_for_Division_VP_Approval</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -264,7 +273,7 @@
         <locationX>446</locationX>
         <locationY>1862</locationY>
         <defaultConnector>
-            <targetReference>Create_Flow_Interview_Records</targetReference>
+            <targetReference>Updating_Field_Values</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -287,9 +296,9 @@
         <name>Submit_for_Division_VP_Approval</name>
         <label>Submit for Division VP Approval</label>
         <locationX>600</locationX>
-        <locationY>1214</locationY>
+        <locationY>1106</locationY>
         <defaultConnector>
-            <targetReference>Create_Flow_Interview_Records</targetReference>
+            <targetReference>Updating_Field_Values</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -303,7 +312,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Task_Record_Type</targetReference>
+                <targetReference>assigning_division_VP</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -335,7 +344,7 @@
         <name>Create_Flow_Interview_Records</name>
         <label>Create Flow Interview Records</label>
         <locationX>600</locationX>
-        <locationY>2354</locationY>
+        <locationY>2462</locationY>
         <inputAssignments>
             <field>Completed__c</field>
             <value>
@@ -570,7 +579,7 @@
         <locationX>314</locationX>
         <locationY>2078</locationY>
         <connector>
-            <targetReference>Create_Flow_Interview_Records</targetReference>
+            <targetReference>Updating_Field_Values</targetReference>
         </connector>
         <inputReference>Find_Rework_Tasks</inputReference>
     </recordUpdates>
@@ -579,9 +588,9 @@
         <name>Updating_Field_Values</name>
         <label>Updating Field Values</label>
         <locationX>600</locationX>
-        <locationY>1106</locationY>
+        <locationY>2354</locationY>
         <connector>
-            <targetReference>Submit_for_Division_VP_Approval</targetReference>
+            <targetReference>Create_Flow_Interview_Records</targetReference>
         </connector>
         <inputReference>Get_Case_Record</inputReference>
     </recordUpdates>
@@ -1016,7 +1025,7 @@
             <inputParameters>
                 <name>value</name>
                 <value>
-                    <elementReference>Get_Case_Record.Target_Audience__c</elementReference>
+                    <elementReference>Get_Case_Record.Target_Audience_Benefiting__c</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
