@@ -2301,7 +2301,7 @@
             <targetReference>Get_Case_Record</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>CompletedFlows</name>
         <dataType>String</dataType>
