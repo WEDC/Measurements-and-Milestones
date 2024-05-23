@@ -51,7 +51,7 @@
         <locationX>446</locationX>
         <locationY>1214</locationY>
         <assignmentItems>
-            <assignToReference>Get_Case_Record.Division_Lookup__c</assignToReference>
+            <assignToReference>Get_Case_Record.Division_VP__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>DivisionVP_LookUp.recordId</elementReference>
@@ -2301,7 +2301,7 @@
             <targetReference>Get_Case_Record</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>CompletedFlows</name>
         <dataType>String</dataType>
