@@ -3303,7 +3303,7 @@
                             <leftValueReference>Is_Competetive.value</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>
-                                <stringValue>Yes</stringValue>
+                                <stringValue>Competitive</stringValue>
                             </rightValue>
                         </conditions>
                     </visibilityRule>
@@ -3345,6 +3345,16 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Is_Competetive.value</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Competitive</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
                 </fields>
                 <inputParameters>
                     <name>width</name>

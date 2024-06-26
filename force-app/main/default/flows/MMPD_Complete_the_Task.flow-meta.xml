@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
+        <name>Post_Decision_to_Chatter</name>
+        <label>Post Decision to Chatter</label>
+        <locationX>754</locationX>
+        <locationY>1922</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <connector>
+            <targetReference>Refresh</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>ChatterPost</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>Get_related_Case.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>chatterPost</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
         <name>Refresh</name>
         <label>Refresh</label>
         <locationX>732</locationX>
-        <locationY>2174</locationY>
+        <locationY>2282</locationY>
         <actionName>c:localRefresh</actionName>
         <actionType>component</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -567,7 +594,7 @@
         <locationX>754</locationX>
         <locationY>1814</locationY>
         <connector>
-            <targetReference>Refresh</targetReference>
+            <targetReference>Post_Decision_to_Chatter</targetReference>
         </connector>
         <inputReference>Get_Task_Records</inputReference>
     </recordUpdates>
@@ -727,6 +754,14 @@
         </connector>
     </start>
     <status>Active</status>
+    <textTemplates>
+        <name>ChatterPost</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hello @[{!Get_related_Case.Owner:User.Id}], the {!Get_Task_Records.Subject} has been completed
+
+Decision: {!ApprovalPicklist}
+Notes: {!DecisionNotes}</text>
+    </textTemplates>
     <variables>
         <name>NumberofTasks</name>
         <dataType>Number</dataType>
