@@ -4,7 +4,7 @@
         <name>AAC_Email</name>
         <label>AAC Email</label>
         <locationX>1106</locationX>
-        <locationY>4199</locationY>
+        <locationY>4307</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -29,6 +29,12 @@
                 <elementReference>EmailBody2</elementReference>
             </value>
         </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
         <nameSegment>emailSimple</nameSegment>
         <versionSegment>1</versionSegment>
     </actionCalls>
@@ -36,7 +42,7 @@
         <name>Board_Approval_Email</name>
         <label>Board Approval Email</label>
         <locationX>1370</locationX>
-        <locationY>4199</locationY>
+        <locationY>4307</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -61,14 +67,20 @@
                 <elementReference>EmailBody2</elementReference>
             </value>
         </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
         <nameSegment>emailSimple</nameSegment>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>Case_Closed_Email</name>
         <label>Case Closed Email</label>
-        <locationX>2866</locationX>
-        <locationY>4091</locationY>
+        <locationX>3306</locationX>
+        <locationY>4199</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -90,7 +102,25 @@
         <inputParameters>
             <name>emailBody</name>
             <value>
-                <stringValue>The case has been closed!</stringValue>
+                <elementReference>CaseClosedBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>Get_Case_Records.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
@@ -99,8 +129,8 @@
     <actionCalls>
         <name>Case_Closed_Notification</name>
         <label>Case Closed Notification</label>
-        <locationX>2866</locationX>
-        <locationY>4199</locationY>
+        <locationX>3306</locationX>
+        <locationY>4307</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -144,7 +174,7 @@
         <name>Copy_1_of_Notification_to_Steering_Committee</name>
         <label>Notification to Steering Committee 2</label>
         <locationX>842</locationX>
-        <locationY>4307</locationY>
+        <locationY>4415</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -188,7 +218,7 @@
         <name>Copy_2_of_Division_VP_Notification</name>
         <label>Division VP Notification 2</label>
         <locationX>578</locationX>
-        <locationY>4307</locationY>
+        <locationY>4415</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -232,7 +262,7 @@
         <name>Copy_2_of_Notification_to_Steering_Committee_2</name>
         <label>Notification to Steering Committee 3</label>
         <locationX>1106</locationX>
-        <locationY>4307</locationY>
+        <locationY>4415</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -275,8 +305,8 @@
     <actionCalls>
         <name>Copy_2_of_Send_Rework_INV_Notification</name>
         <label>Copy 2 of Send Rework INV Notification</label>
-        <locationX>2074</locationX>
-        <locationY>4415</locationY>
+        <locationX>2514</locationX>
+        <locationY>4523</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -320,7 +350,7 @@
         <name>Division_VP_2_Email</name>
         <label>Division VP 2 Email</label>
         <locationX>578</locationX>
-        <locationY>4199</locationY>
+        <locationY>4307</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -336,7 +366,7 @@
         <inputParameters>
             <name>emailSubject</name>
             <value>
-                <stringValue>Division VP Approval - 2</stringValue>
+                <stringValue>Division VP Development Approval</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -345,14 +375,89 @@
                 <elementReference>EmailBody2</elementReference>
             </value>
         </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Investment_Development_Ready_Email</name>
+        <label>Investment Development Ready Email</label>
+        <locationX>314</locationX>
+        <locationY>4415</locationY>
+        <actionName>SendBetterEmail</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Update_Case_Status</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>cb_saveAsActivity</name>
+            <value>
+                <stringValue>CB_FALSE</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>cb_saveAsTask</name>
+            <value>
+                <stringValue>CB_FALSE</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>HTMLbody</name>
+            <value>
+                <elementReference>InvestmentDevelopmentFormisready</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>Get_Case_Records.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>saveAsActivity</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>saveAsTask</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>SendCCthisStringCollectionOfEmailAddresses</name>
+            <value>
+                <elementReference>DivisionVPCollection</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>SendTOthisStringCollectionOfEmailAddresses</name>
+            <value>
+                <elementReference>WorkingGroupEmailList</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subject</name>
+            <value>
+                <stringValue>Investment Development now available for your access</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>SendBetterEmail</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>Notification_to_Steering_Committee</name>
         <label>Notification to Steering Committee</label>
         <locationX>50</locationX>
-        <locationY>4307</locationY>
+        <locationY>4415</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -396,7 +501,7 @@
         <name>Notification_to_Steering_Committee_3</name>
         <label>Notification to Steering Committee 3</label>
         <locationX>1370</locationX>
-        <locationY>4307</locationY>
+        <locationY>4415</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -440,7 +545,7 @@
         <name>Notify_Case_Owner</name>
         <label>Notify Case Owner</label>
         <locationX>314</locationX>
-        <locationY>4091</locationY>
+        <locationY>4199</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -484,11 +589,11 @@
         <name>Notifying_the_Working_Group</name>
         <label>Notifying the Working Group</label>
         <locationX>314</locationX>
-        <locationY>4199</locationY>
+        <locationY>4307</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
-            <targetReference>Update_Case_Status</targetReference>
+            <targetReference>Investment_Development_Ready_Email</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -527,8 +632,8 @@
     <actionCalls>
         <name>Rework_Investment_Development_Email</name>
         <label>Rework Investment Development Email</label>
-        <locationX>2338</locationX>
-        <locationY>4307</locationY>
+        <locationX>2778</locationX>
+        <locationY>4415</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -553,14 +658,20 @@
                 <elementReference>ReworkEmailBody</elementReference>
             </value>
         </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
         <nameSegment>emailSimple</nameSegment>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>Rework_Statement_of_Need_Email</name>
         <label>Rework Statement of Need Email</label>
-        <locationX>2074</locationX>
-        <locationY>4307</locationY>
+        <locationX>2514</locationX>
+        <locationY>4415</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -585,6 +696,12 @@
                 <elementReference>ReworkEmailBody</elementReference>
             </value>
         </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
         <nameSegment>emailSimple</nameSegment>
         <versionSegment>1</versionSegment>
     </actionCalls>
@@ -592,7 +709,7 @@
         <name>Send_Email_System_Integeration</name>
         <label>Send Email System Integeration</label>
         <locationX>1634</locationX>
-        <locationY>4415</locationY>
+        <locationY>4631</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -618,6 +735,18 @@
             </value>
         </inputParameters>
         <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>Get_Case_Records.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
             <name>logEmailOnSend</name>
             <value>
                 <booleanValue>true</booleanValue>
@@ -630,7 +759,7 @@
         <name>Send_Notifications_to_System_Owner</name>
         <label>Send Notifications to System Owner</label>
         <locationX>1634</locationX>
-        <locationY>4523</locationY>
+        <locationY>4739</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -673,8 +802,8 @@
     <actionCalls>
         <name>Send_Rework_INV_Notification</name>
         <label>Send Rework INV Notification</label>
-        <locationX>2338</locationX>
-        <locationY>4415</locationY>
+        <locationX>2778</locationX>
+        <locationY>4523</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -718,7 +847,7 @@
         <name>SISC_Email_1</name>
         <label>SISC Email 1</label>
         <locationX>50</locationX>
-        <locationY>4199</locationY>
+        <locationY>4307</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -743,6 +872,12 @@
                 <elementReference>EmailBody2</elementReference>
             </value>
         </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
         <nameSegment>emailSimple</nameSegment>
         <versionSegment>1</versionSegment>
     </actionCalls>
@@ -750,7 +885,7 @@
         <name>Steering_Committee_Email_2</name>
         <label>Steering Committee Email 2</label>
         <locationX>842</locationX>
-        <locationY>4199</locationY>
+        <locationY>4307</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -766,13 +901,19 @@
         <inputParameters>
             <name>emailSubject</name>
             <value>
-                <stringValue>Steering Committee Approval - 2</stringValue>
+                <stringValue>Steering Committee Development Approval</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
             <name>emailBody</name>
             <value>
                 <elementReference>EmailBody2</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
@@ -782,7 +923,7 @@
     <assignments>
         <name>Add_ID_to_Variable</name>
         <label>Add ID to Variable</label>
-        <locationX>2272</locationX>
+        <locationX>2602</locationX>
         <locationY>2135</locationY>
         <assignmentItems>
             <assignToReference>SteeringCommitteeMemberID</assignToReference>
@@ -798,7 +939,7 @@
     <assignments>
         <name>Assign_ID_of_Members</name>
         <label>Assign ID of Members</label>
-        <locationX>2272</locationX>
+        <locationX>2602</locationX>
         <locationY>2843</locationY>
         <assignmentItems>
             <assignToReference>WorkingGroupMemberID</assignToReference>
@@ -812,10 +953,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Assign_Number_of_Tasks_Completed</name>
+        <label>Assign Number of Tasks Completed</label>
+        <locationX>2030</locationX>
+        <locationY>4199</locationY>
+        <assignmentItems>
+            <assignToReference>IntegrationTasksCompleted</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Get_All_System_Integration_Task</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Are_all_the_tasks_completed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Assigning_Email_and_IDs_to_a_Collection</name>
         <label>Assigning Email and IDs to a Collection</label>
-        <locationX>2272</locationX>
-        <locationY>1727</locationY>
+        <locationX>2602</locationX>
+        <locationY>1835</locationY>
         <assignmentItems>
             <assignToReference>SystemOwnerEmailCollection</assignToReference>
             <operator>Add</operator>
@@ -837,8 +994,8 @@
     <assignments>
         <name>Case_Owner_Assignments</name>
         <label>Case Owner Assignments</label>
-        <locationX>2184</locationX>
-        <locationY>1919</locationY>
+        <locationX>2514</locationX>
+        <locationY>3551</locationY>
         <assignmentItems>
             <assignToReference>CaseOwner</assignToReference>
             <operator>Add</operator>
@@ -847,14 +1004,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Member_ID_Steering_Committee</targetReference>
+            <targetReference>Get_Custom_Notification_Record</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Close_the_Case</name>
         <label>Close the Case</label>
-        <locationX>2866</locationX>
-        <locationY>3983</locationY>
+        <locationX>3306</locationX>
+        <locationY>4091</locationY>
         <assignmentItems>
             <assignToReference>Get_Case_Records.New_Program_Proposal_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -867,9 +1024,25 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Close_the_Case2</name>
+        <label>Close the Case</label>
+        <locationX>1898</locationX>
+        <locationY>4415</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Case_Records.New_Program_Proposal_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case_Status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Email_Collection_for_SISC</name>
         <label>Email Collection for SISC</label>
-        <locationX>2272</locationX>
+        <locationX>2602</locationX>
         <locationY>2543</locationY>
         <assignmentItems>
             <assignToReference>SteeringCommitteeMembersEmail</assignToReference>
@@ -885,7 +1058,7 @@
     <assignments>
         <name>EmailList_for_Working_Group_Assignment</name>
         <label>EmailList for Working Group Assignment</label>
-        <locationX>2272</locationX>
+        <locationX>2602</locationX>
         <locationY>3251</locationY>
         <assignmentItems>
             <assignToReference>WorkingGroupEmailList</assignToReference>
@@ -901,8 +1074,8 @@
     <assignments>
         <name>Rework_Update_the_Status_Path</name>
         <label>Rework Update the Status Path</label>
-        <locationX>2074</locationX>
-        <locationY>4199</locationY>
+        <locationX>2514</locationX>
+        <locationY>4307</locationY>
         <assignmentItems>
             <assignToReference>Get_Case_Records.New_Program_Proposal_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -917,8 +1090,8 @@
     <assignments>
         <name>Rework_Update_the_Status_Path_Investment_Development</name>
         <label>Rework Update the Status Path Investment Development</label>
-        <locationX>2338</locationX>
-        <locationY>4199</locationY>
+        <locationX>2778</locationX>
+        <locationY>4307</locationY>
         <assignmentItems>
             <assignToReference>Get_Case_Records.New_Program_Proposal_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -934,7 +1107,7 @@
         <name>Update_Status_to_Investment_Development</name>
         <label>Update Status to Investment Development</label>
         <locationX>314</locationX>
-        <locationY>3983</locationY>
+        <locationY>4091</locationY>
         <assignmentItems>
             <assignToReference>Get_Case_Records.New_Program_Proposal_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -950,7 +1123,7 @@
         <name>Update_the_Status_Path</name>
         <label>Update the Status Path</label>
         <locationX>50</locationX>
-        <locationY>4091</locationY>
+        <locationY>4199</locationY>
         <assignmentItems>
             <assignToReference>Get_Case_Records.New_Program_Proposal_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -966,7 +1139,7 @@
         <name>Update_the_Status_Path_AAC</name>
         <label>Update the Status Path AAC</label>
         <locationX>1106</locationX>
-        <locationY>4091</locationY>
+        <locationY>4199</locationY>
         <assignmentItems>
             <assignToReference>Get_Case_Records.New_Program_Proposal_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -982,7 +1155,7 @@
         <name>Update_the_Status_Path_Board_Approval</name>
         <label>Update the Status Path Board Approval</label>
         <locationX>1370</locationX>
-        <locationY>4091</locationY>
+        <locationY>4199</locationY>
         <assignmentItems>
             <assignToReference>Get_Case_Records.New_Program_Proposal_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -998,7 +1171,7 @@
         <name>Update_the_Status_Path_Div_2</name>
         <label>Update the Status Path Div 2</label>
         <locationX>578</locationX>
-        <locationY>4091</locationY>
+        <locationY>4199</locationY>
         <assignmentItems>
             <assignToReference>Get_Case_Records.New_Program_Proposal_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -1021,7 +1194,7 @@
         <name>Update_the_Status_Path_SC_2</name>
         <label>Update the Status Path SC 2</label>
         <locationX>842</locationX>
-        <locationY>4091</locationY>
+        <locationY>4199</locationY>
         <assignmentItems>
             <assignToReference>Get_Case_Records.New_Program_Proposal_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -1034,10 +1207,35 @@
         </connector>
     </assignments>
     <decisions>
+        <name>Are_all_the_tasks_completed</name>
+        <label>Are all the tasks completed?</label>
+        <locationX>2030</locationX>
+        <locationY>4307</locationY>
+        <defaultConnector>
+            <targetReference>Update_Case_Status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_all_tasks_completed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IntegrationTasksCompleted</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>5.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Close_the_Case2</targetReference>
+            </connector>
+            <label>Yes all tasks completed</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_Rework_or_Declined_Submission</name>
         <label>Is Rework or Declined Submission</label>
-        <locationX>2734</locationX>
-        <locationY>3767</locationY>
+        <locationX>3174</locationX>
+        <locationY>3875</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Rework</name>
@@ -1073,8 +1271,8 @@
     <decisions>
         <name>Is_Task_Completed_AND_Reviewed_Accepted</name>
         <label>Is Task Completed AND Reviewed Accepted</label>
-        <locationX>2184</locationX>
-        <locationY>3659</locationY>
+        <locationX>2514</locationX>
+        <locationY>3767</locationY>
         <defaultConnectorLabel>Default</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -1131,7 +1329,7 @@
     <decisions>
         <name>Right_Record_Type</name>
         <label>Right Record Type?</label>
-        <locationX>2921</locationX>
+        <locationX>3306</locationX>
         <locationY>431</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -1153,8 +1351,8 @@
     <decisions>
         <name>What_Task_to_create</name>
         <label>What Task to create?</label>
-        <locationX>974</locationX>
-        <locationY>3875</locationY>
+        <locationX>1194</locationX>
+        <locationY>3983</locationY>
         <defaultConnector>
             <targetReference>Update_Case_Status</targetReference>
         </defaultConnector>
@@ -1320,13 +1518,35 @@
             </connector>
             <label>System Integration Tasks</label>
         </rules>
+        <rules>
+            <name>Closing_the_Case</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>System Integration</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Decision_Action__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Reviewed and Accepted</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_All_System_Integration_Task</targetReference>
+            </connector>
+            <label>Closing the Case</label>
+        </rules>
     </decisions>
     <decisions>
         <description>Rework for Statement of Need or Investment Development Form?</description>
         <name>What_to_Rework</name>
         <label>What to Rework?</label>
-        <locationX>2338</locationX>
-        <locationY>3983</locationY>
+        <locationX>2778</locationX>
+        <locationY>4091</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Rework_Statement_of_Need</name>
@@ -1407,7 +1627,7 @@
     <loops>
         <name>Email_List_SISC</name>
         <label>Email List SISC</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>2435</locationY>
         <collectionReference>Get_User_from_the_SISC_Queue</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -1421,7 +1641,7 @@
     <loops>
         <name>EmailList_for_Working_Group</name>
         <label>EmailList for Working Group</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>3143</locationY>
         <collectionReference>Get_Working_Group_Users</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -1435,7 +1655,7 @@
     <loops>
         <name>Get_MemberID_Working_Group</name>
         <label>Get MemberID Working Group</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>2735</locationY>
         <collectionReference>Get_Queue_Members_Working_Group</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -1449,21 +1669,21 @@
     <loops>
         <name>ID_Collection_Loop_System_Owners</name>
         <label>ID Collection Loop - System Owners</label>
-        <locationX>2184</locationX>
-        <locationY>1619</locationY>
+        <locationX>2514</locationX>
+        <locationY>1727</locationY>
         <collectionReference>Get_System_Owner_Records</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Assigning_Email_and_IDs_to_a_Collection</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Case_Owner_Assignments</targetReference>
+            <targetReference>Member_ID_Steering_Committee</targetReference>
         </noMoreValuesConnector>
     </loops>
     <loops>
         <name>Member_ID_Steering_Committee</name>
         <label>Member ID Steering Committee</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>2027</locationY>
         <collectionReference>Get_Queue_Members_Steering_Committee</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -1498,7 +1718,7 @@
         <name>AAC_Approval</name>
         <label>AAC Approval</label>
         <locationX>1106</locationX>
-        <locationY>3983</locationY>
+        <locationY>4091</locationY>
         <connector>
             <targetReference>Update_the_Status_Path_AAC</targetReference>
         </connector>
@@ -1552,7 +1772,7 @@
         <name>Board_Approval</name>
         <label>Board Approval</label>
         <locationX>1370</locationX>
-        <locationY>3983</locationY>
+        <locationY>4091</locationY>
         <connector>
             <targetReference>Update_the_Status_Path_Board_Approval</targetReference>
         </connector>
@@ -1606,7 +1826,7 @@
         <name>Division_VP_Approval_2</name>
         <label>Division VP Approval 2</label>
         <locationX>578</locationX>
-        <locationY>3983</locationY>
+        <locationY>4091</locationY>
         <connector>
             <targetReference>Update_the_Status_Path_Div_2</targetReference>
         </connector>
@@ -1637,7 +1857,7 @@
         <inputAssignments>
             <field>Subject</field>
             <value>
-                <stringValue>Division VP Approval 2</stringValue>
+                <stringValue>Division VP Development Approval</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1659,7 +1879,7 @@
         <name>EnABLE_Task</name>
         <label>EnABLE Task</label>
         <locationX>1634</locationX>
-        <locationY>3983</locationY>
+        <locationY>4091</locationY>
         <connector>
             <targetReference>SalesforceTask</targetReference>
         </connector>
@@ -1688,6 +1908,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>System Integration</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>WhatId</field>
             <value>
                 <elementReference>Get_Case_Records.Id</elementReference>
@@ -1700,9 +1926,9 @@
         <name>Intacct_Task</name>
         <label>Intacct Task</label>
         <locationX>1634</locationX>
-        <locationY>4307</locationY>
+        <locationY>4415</locationY>
         <connector>
-            <targetReference>Send_Email_System_Integeration</targetReference>
+            <targetReference>Marketing_Task</targetReference>
         </connector>
         <inputAssignments>
             <field>ActivityDate</field>
@@ -1729,6 +1955,59 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>System Integration</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>Get_Case_Records.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Marketing_Task</name>
+        <label>Marketing Task</label>
+        <locationX>1634</locationX>
+        <locationY>4523</locationY>
+        <connector>
+            <targetReference>Send_Email_System_Integeration</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>WeekFromNow</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <stringValue>Please mark this task complete after performing the program integration on the WEDC Website</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_Marketing_Integration_User.SetupOwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Marketing Integration</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>System Integration</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>WhatId</field>
             <value>
                 <elementReference>Get_Case_Records.Id</elementReference>
@@ -1741,7 +2020,7 @@
         <name>Program_Hub_Task</name>
         <label>Program Hub Task</label>
         <locationX>1634</locationX>
-        <locationY>4199</locationY>
+        <locationY>4307</locationY>
         <connector>
             <targetReference>Intacct_Task</targetReference>
         </connector>
@@ -1770,6 +2049,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>System Integration</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>WhatId</field>
             <value>
                 <elementReference>Get_Case_Records.Id</elementReference>
@@ -1782,8 +2067,8 @@
         <description>Task is created for Rework Investment Development</description>
         <name>Rework_Investment_Development_Task</name>
         <label>Rework Investment Development Task</label>
-        <locationX>2338</locationX>
-        <locationY>4091</locationY>
+        <locationX>2778</locationX>
+        <locationY>4199</locationY>
         <connector>
             <targetReference>Rework_Update_the_Status_Path_Investment_Development</targetReference>
         </connector>
@@ -1836,8 +2121,8 @@
         <description>Task is created for Rework Statement of Need</description>
         <name>Rework_Statement_of_Need2</name>
         <label>Rework Statement of Need</label>
-        <locationX>2074</locationX>
-        <locationY>4091</locationY>
+        <locationX>2514</locationX>
+        <locationY>4199</locationY>
         <connector>
             <targetReference>Rework_Update_the_Status_Path</targetReference>
         </connector>
@@ -1890,7 +2175,7 @@
         <name>SalesforceTask</name>
         <label>Salesforce Task</label>
         <locationX>1634</locationX>
-        <locationY>4091</locationY>
+        <locationY>4199</locationY>
         <connector>
             <targetReference>Program_Hub_Task</targetReference>
         </connector>
@@ -1919,6 +2204,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>System Integration</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>WhatId</field>
             <value>
                 <elementReference>Get_Case_Records.Id</elementReference>
@@ -1932,7 +2223,7 @@
         <name>Steering_Committe_Approval_1</name>
         <label>Steering Committee Approval 1</label>
         <locationX>50</locationX>
-        <locationY>3983</locationY>
+        <locationY>4091</locationY>
         <connector>
             <targetReference>Update_the_Status_Path</targetReference>
         </connector>
@@ -1963,7 +2254,7 @@
         <inputAssignments>
             <field>Subject</field>
             <value>
-                <stringValue>Steering Committee Approval 1</stringValue>
+                <stringValue>Steering Committee Proposal Approval</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1986,7 +2277,7 @@
         <name>Steering_Committee_Approval_2</name>
         <label>Steering Committee Approval 2</label>
         <locationX>842</locationX>
-        <locationY>3983</locationY>
+        <locationY>4091</locationY>
         <connector>
             <targetReference>Update_the_Status_Path_SC_2</targetReference>
         </connector>
@@ -2017,7 +2308,7 @@
         <inputAssignments>
             <field>Subject</field>
             <value>
-                <stringValue>Steering Committee Approval 2</stringValue>
+                <stringValue>Steering Committee Development Approval</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2038,11 +2329,11 @@
     <recordLookups>
         <name>Division_VP_Record</name>
         <label>Division VP Record</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>3443</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Custom_Notification_Record</targetReference>
+            <targetReference>Case_Owner_Assignments</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -2057,9 +2348,51 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_All_System_Integration_Task</name>
+        <label>Get All System Integration Task</label>
+        <locationX>2030</locationX>
+        <locationY>4091</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Number_of_Tasks_Completed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>System Integration</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>WhatId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Case_Records.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Decision_Action__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Reviewed and Accepted</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Case_Records</name>
         <label>Get Case Records</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>755</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2080,8 +2413,8 @@
     <recordLookups>
         <name>Get_Custom_Notification_Record</name>
         <label>Get Custom Notification Record</label>
-        <locationX>2184</locationX>
-        <locationY>3551</locationY>
+        <locationX>2514</locationX>
+        <locationY>3659</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Is_Task_Completed_AND_Reviewed_Accepted</targetReference>
@@ -2101,7 +2434,7 @@
     <recordLookups>
         <name>Get_EnABLE_System_Integration_User</name>
         <label>Get EnABLE System Integration User</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>1295</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2122,11 +2455,11 @@
     <recordLookups>
         <name>Get_Intacct_System_Integration_User</name>
         <label>Get Intacct System Integration User</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>1403</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_System_Owner_Records</targetReference>
+            <targetReference>Get_Marketing_Integration_User</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -2141,9 +2474,30 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Marketing_Integration_User</name>
+        <label>Get Marketing Integration User</label>
+        <locationX>2514</locationX>
+        <locationY>1511</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_System_Owner_Records</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>System_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Marketing</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ProgramIntegerationOwners__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Program_Hub_Integration_User</name>
         <label>Get Program Hub Integration User</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>1079</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2164,7 +2518,7 @@
     <recordLookups>
         <name>Get_Queue_Members_Steering_Committee</name>
         <label>Get Queue Members Steering Committee</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>863</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2185,7 +2539,7 @@
     <recordLookups>
         <name>Get_Queue_Members_Working_Group</name>
         <label>Get Queue Members Working Group</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>971</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2206,7 +2560,7 @@
     <recordLookups>
         <name>Get_Salesforce_Integration_User</name>
         <label>Get Salesforce Integration User</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>1187</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2227,7 +2581,7 @@
     <recordLookups>
         <name>Get_Steering_Committee_Queue</name>
         <label>Get Steering Committee Queue</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2255,8 +2609,8 @@
     <recordLookups>
         <name>Get_System_Owner_Records</name>
         <label>Get System Owner Records</label>
-        <locationX>2184</locationX>
-        <locationY>1511</locationY>
+        <locationX>2514</locationX>
+        <locationY>1619</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>ID_Collection_Loop_System_Owners</targetReference>
@@ -2268,7 +2622,7 @@
     <recordLookups>
         <name>Get_Task_Record_Type</name>
         <label>Get Task Record Type</label>
-        <locationX>2921</locationX>
+        <locationX>3306</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2289,7 +2643,7 @@
     <recordLookups>
         <name>Get_User_from_the_SISC_Queue</name>
         <label>Get User from the SISC Queue</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>2327</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2311,7 +2665,7 @@
         <description>Gets the queu</description>
         <name>Get_Working_Group_Queue</name>
         <label>Get Working Group Queue</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>647</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2339,7 +2693,7 @@
     <recordLookups>
         <name>Get_Working_Group_Users</name>
         <label>Get Working Group Users</label>
-        <locationX>2184</locationX>
+        <locationX>2514</locationX>
         <locationY>3035</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2360,30 +2714,30 @@
     <recordUpdates>
         <name>Update_Case_Status</name>
         <label>Update Case Status</label>
-        <locationX>974</locationX>
-        <locationY>4715</locationY>
+        <locationX>1194</locationX>
+        <locationY>4931</locationY>
         <inputReference>Get_Case_Records</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Case_Status_Rework</name>
         <label>Update Case Status Rework</label>
-        <locationX>2074</locationX>
-        <locationY>4523</locationY>
+        <locationX>2514</locationX>
+        <locationY>4631</locationY>
         <inputReference>Get_Case_Records</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Case_Status_to_Investment_Development</name>
         <label>Update Case Status to Investment Development</label>
-        <locationX>2338</locationX>
-        <locationY>4523</locationY>
+        <locationX>2778</locationX>
+        <locationY>4631</locationY>
         <inputReference>Get_Case_Records</inputReference>
     </recordUpdates>
     <recordUpdates>
         <description>Update the completion date, time and completed by for all task records that come in</description>
         <name>Update_Completion_Info</name>
         <label>Update Completion Info</label>
-        <locationX>974</locationX>
-        <locationY>3767</locationY>
+        <locationX>1194</locationX>
+        <locationY>3875</locationY>
         <connector>
             <targetReference>What_Task_to_create</targetReference>
         </connector>
@@ -2417,8 +2771,8 @@
         <description>Update the completion date, time and completed by for all task records that come in</description>
         <name>Update_Declined_Submission_Completion_Info</name>
         <label>Update Declined Submission Completion Info</label>
-        <locationX>2866</locationX>
-        <locationY>3875</locationY>
+        <locationX>3306</locationX>
+        <locationY>3983</locationY>
         <connector>
             <targetReference>Close_the_Case</targetReference>
         </connector>
@@ -2451,16 +2805,16 @@
     <recordUpdates>
         <name>Update_the_Case_Status_to_Closed</name>
         <label>Update the Case Status to Closed</label>
-        <locationX>2866</locationX>
-        <locationY>4307</locationY>
+        <locationX>3306</locationX>
+        <locationY>4415</locationY>
         <inputReference>Get_Case_Records</inputReference>
     </recordUpdates>
     <recordUpdates>
         <description>Update the completion date, time and completed by for all task records that come in</description>
         <name>UpdateReworkCompletion_Info</name>
         <label>Update Rework Completion Info</label>
-        <locationX>2338</locationX>
-        <locationY>3875</locationY>
+        <locationX>2778</locationX>
+        <locationY>3983</locationY>
         <connector>
             <targetReference>What_to_Rework</targetReference>
         </connector>
@@ -2491,7 +2845,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>2795</locationX>
+        <locationX>3180</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Task_Record_Type</targetReference>
@@ -2524,9 +2878,20 @@
     </start>
     <status>Active</status>
     <textTemplates>
+        <name>CaseClosedBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Greeting!
+The  {!Get_Case_Records.Program_Name__c} case has been closed and you can review the decision made by reviewing the chatter feed.</text>
+    </textTemplates>
+    <textTemplates>
         <name>EmailBody2</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;Greetings!&lt;/p&gt;&lt;p&gt;We hope this email finds you well.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;We are writing to request your review and approval of the related case at your earliest convenience. Your approval is crucial as it will automatically generate a subsequent task, allowing us to proceed with the next steps efficiently.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please find the details of the case attached for your perusal. If you have any questions or require additional information, do not hesitate to reach out.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Program Name: {&lt;/strong&gt;!Get_Case_Records.Program_Name__c}&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Program Case URL :&lt;/strong&gt; https://wedc.lightning.force.com/{!Get_Case_Records.Id}&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Thank you for your prompt attention to this matter.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;--Please do not reply to this email--&lt;/p&gt;</text>
+        <text>&lt;p&gt;Greetings!&lt;/p&gt;&lt;p&gt;We hope this email finds you well.&lt;/p&gt;&lt;p&gt;We are writing to request your review and approval of the related case at your earliest convenience. Your approval is crucial as it will automatically generate a subsequent task, allowing us to proceed with the next steps efficiently.&lt;/p&gt;&lt;p&gt;Please find the details of the case attached for your perusal. If you have any questions or require additional information, do not hesitate to reach out.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Program Name: {!Get_Case_Records.Program_Name__c}&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Program Case URL :&lt;/strong&gt; https://wedc.lightning.force.com/{!Get_Case_Records.Id}&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Thank you for your prompt attention to this matter.&lt;/p&gt;&lt;p&gt;--Please do not reply to this email--&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>InvestmentDevelopmentFormisready</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Greetings,&lt;/p&gt;&lt;p&gt;I am pleased to inform you that the Investment Development form is now available for your use. This form has been designed to streamline our program management processes and ensure that you have a seamless experience.&lt;/p&gt;&lt;p&gt;We are excited to share that this form has successfully cleared the proposal phase with the approval of both Division VP and the Steering Committee. Their thorough review and endorsement ensure that the Statement of Need form meets all necessary standards and requirements.&lt;/p&gt;&lt;p&gt;To access the Investment Development form, please follow the link below:&lt;/p&gt;&lt;p&gt;https://wedc.lightning.force.com/lightning/r/Case/{!Get_Case_Records.Id}/view&lt;/p&gt;&lt;p&gt;Program Name:{!Get_Case_Records.Program_Name__c}&lt;/p&gt;&lt;p&gt;Thank you for your attention to this matter.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;--Please do not reply to this email--&lt;/p&gt;</text>
     </textTemplates>
     <textTemplates>
         <name>InvestmentDevelopmentSubject</name>
@@ -2546,7 +2911,10 @@
     <textTemplates>
         <name>SystemIntegerationBody</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>You are being notified to complete a System Integration Task. {!Get_Case_Records.Program_Name__c} - program has been approved by the WEDC Board. Thank you for your assistance!</text>
+        <text>Greetings!
+You are being notified to complete a System Integration Task. {!Get_Case_Records.Program_Name__c} - program has been approved by the WEDC Board. 
+Please use the link to access the https://wedc.lightning.force.com/lightning/r/Case/{!Get_Case_Records.Id}/view
+Thank you for your assistance!</text>
     </textTemplates>
     <textTemplates>
         <name>SystemIntegerationEmailBody</name>
@@ -2573,6 +2941,17 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IntegrationTasksCompleted</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
     </variables>
     <variables>
         <name>SteeringCommitteeMemberID</name>

@@ -969,7 +969,7 @@
                             <leftValueReference>submissionCount_INV</leftValueReference>
                             <operator>GreaterThan</operator>
                             <rightValue>
-                                <numberValue>1.0</numberValue>
+                                <numberValue>0.0</numberValue>
                             </rightValue>
                         </conditions>
                     </visibilityRule>
