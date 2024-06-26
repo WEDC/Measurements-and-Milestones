@@ -71,4 +71,9 @@
         <default>false</default>
         <label>Rework Investment Development</label>
     </standardValue>
+    <standardValue>
+        <fullName>System Integration</fullName>
+        <default>false</default>
+        <label>System Integration</label>
+    </standardValue>
 </StandardValueSet>

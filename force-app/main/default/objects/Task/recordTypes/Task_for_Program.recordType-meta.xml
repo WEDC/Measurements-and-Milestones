@@ -584,6 +584,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>System Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Working Group Approval</fullName>
             <default>false</default>
         </values>

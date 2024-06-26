@@ -4,11 +4,11 @@
         <name>Send_Custom_Notification_to_Working_Group</name>
         <label>Send Custom Notification to Working Group</label>
         <locationX>446</locationX>
-        <locationY>2678</locationY>
+        <locationY>2786</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
-            <targetReference>get_Rework_Task</targetReference>
+            <targetReference>Send_Email_to_Working_Group</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -26,13 +26,13 @@
         <inputParameters>
             <name>title</name>
             <value>
-                <stringValue>Action Required for the Program Case</stringValue>
+                <stringValue>Working Group Development Approval</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
             <name>body</name>
             <value>
-                <stringValue>Please review the following Program Case for the Working Group Approval. </stringValue>
+                <elementReference>NotificationBody</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -44,12 +44,78 @@
         <nameSegment>customNotificationAction</nameSegment>
         <versionSegment>1</versionSegment>
     </actionCalls>
+    <actionCalls>
+        <name>Send_Email_to_Working_Group</name>
+        <label>Send Email to Working Group</label>
+        <locationX>446</locationX>
+        <locationY>2894</locationY>
+        <actionName>SendBetterEmail</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>get_Rework_Task</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>cb_saveAsActivity</name>
+            <value>
+                <stringValue>CB_TRUE</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>cb_saveAsTask</name>
+            <value>
+                <stringValue>CB_FALSE</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>HTMLbody</name>
+            <value>
+                <elementReference>EmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>plainTextBody</name>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>Get_Case_Records.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>saveAsActivity</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>saveAsTask</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>SendTOthisStringCollectionOfEmailAddresses</name>
+            <value>
+                <elementReference>emailList</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subject</name>
+            <value>
+                <stringValue>Working Group Development Approval</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>SendBetterEmail</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
     <apiVersion>60.0</apiVersion>
     <assignments>
         <name>Assignment_of_Fields_for_Case</name>
         <label>Assignment of Fields for Case</label>
         <locationX>600</locationX>
-        <locationY>3386</locationY>
+        <locationY>3602</locationY>
         <assignmentItems>
             <assignToReference>Get_Case_Records.Award_Type__c</assignToReference>
             <operator>Assign</operator>
@@ -97,13 +163,6 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>TargetAudience.value</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_Case_Records.Is_Competetive__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Is_Competetive.value</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -197,6 +256,20 @@
                 <stringValue>Working Group Approval</stringValue>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Case_Records.Program_Guideline_Link__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Program_Guideline_Link.value</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Case_Records.Is_Competetive__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Is_Competetive.value</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Update_case_Record</targetReference>
         </connector>
@@ -205,7 +278,7 @@
         <name>Collect_Members_User_ID</name>
         <label>Collect Members User ID</label>
         <locationX>534</locationX>
-        <locationY>1862</locationY>
+        <locationY>1970</locationY>
         <assignmentItems>
             <assignToReference>memberID</assignToReference>
             <operator>Add</operator>
@@ -218,9 +291,39 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Count_Number_of_Rows</name>
+        <label>Count Number of Rows</label>
+        <locationX>765</locationX>
+        <locationY>1214</locationY>
+        <assignmentItems>
+            <assignToReference>CountRowsEligibleFunds</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>EligibleIneligibleTable.outputAllRows</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>countRowsDeliverable</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>ProgramDeliverableTable.outputAllRows</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>countRowsEligibleCriteria</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>EligibilityCriteriaTable.outputAllRows</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Are_all_the_rows_completed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Eligibility_Criteria_Default_Value</name>
         <label>Eligibility Criteria Default Value</label>
-        <locationX>600</locationX>
+        <locationX>765</locationX>
         <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>ProgramEligibilityDefaultValue.Related_To__c</assignToReference>
@@ -237,7 +340,7 @@
         <name>Email_List_of_Queue_members</name>
         <label>Email List of Queue members</label>
         <locationX>534</locationX>
-        <locationY>2270</locationY>
+        <locationY>2378</locationY>
         <assignmentItems>
             <assignToReference>emailList</assignToReference>
             <operator>Add</operator>
@@ -252,7 +355,7 @@
     <assignments>
         <name>Program_Eligible_Fund_Default_Value</name>
         <label>Program Eligible Fund Default Value</label>
-        <locationX>600</locationX>
+        <locationX>765</locationX>
         <locationY>998</locationY>
         <assignmentItems>
             <assignToReference>programEligibleFundDefaultValue.Related_To__c</assignToReference>
@@ -268,7 +371,7 @@
     <assignments>
         <name>ProgramDeliverable_Default_Variable</name>
         <label>ProgramDeliverable Default Variable</label>
-        <locationX>600</locationX>
+        <locationX>765</locationX>
         <locationY>782</locationY>
         <assignmentItems>
             <assignToReference>ProgramDeliverableDefaultValue.Related_To__c</assignToReference>
@@ -285,7 +388,7 @@
         <name>Rework_task_Assignment</name>
         <label>Rework task Assignment</label>
         <locationX>314</locationX>
-        <locationY>3002</locationY>
+        <locationY>3218</locationY>
         <assignmentItems>
             <assignToReference>get_Rework_Task.Decision_Action__c</assignToReference>
             <operator>Assign</operator>
@@ -321,9 +424,49 @@
         </value>
     </choices>
     <decisions>
+        <name>Are_all_the_rows_completed</name>
+        <label>Are all the rows completed?</label>
+        <locationX>765</locationX>
+        <locationY>1322</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Investment_Development</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_they_are</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>countRowsDeliverable</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>countRowsEligibleCriteria</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CountRowsEligibleFunds</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Submit_for_Working_Group_Approval</targetReference>
+            </connector>
+            <label>Yes they are!</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_Read_Only</name>
         <label>Is Read Only?</label>
-        <locationX>325</locationX>
+        <locationX>407</locationX>
         <locationY>674</locationY>
         <defaultConnector>
             <targetReference>ProgramDeliverable_Default_Variable</targetReference>
@@ -349,7 +492,7 @@
         <name>Is_there_a_Rework_task</name>
         <label>Is there a Rework task?</label>
         <locationX>446</locationX>
-        <locationY>2894</locationY>
+        <locationY>3110</locationY>
         <defaultConnector>
             <targetReference>Assignment_of_Fields_for_Case</targetReference>
         </defaultConnector>
@@ -374,7 +517,7 @@
         <name>Submit_for_Working_Group_Approval</name>
         <label>Submit for Working Group Approval</label>
         <locationX>600</locationX>
-        <locationY>1322</locationY>
+        <locationY>1430</locationY>
         <defaultConnector>
             <targetReference>Assignment_of_Fields_for_Case</targetReference>
         </defaultConnector>
@@ -383,7 +526,7 @@
             <name>Yes_Create_Working_Group_task</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Do_you_want_to_submit_your_work_for_Working_Group_Approval</leftValueReference>
+                <leftValueReference>SaveWork</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>Yes_this_looks_good</elementReference>
@@ -407,7 +550,7 @@
         <name>Loop_through_the_Working_Group_Members</name>
         <label>Loop through the Working Group Members</label>
         <locationX>446</locationX>
-        <locationY>1754</locationY>
+        <locationY>1862</locationY>
         <collectionReference>Get_Working_Group_Member</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -421,7 +564,7 @@
         <name>Loop_Users</name>
         <label>Loop Users - Working Group</label>
         <locationX>446</locationX>
-        <locationY>2162</locationY>
+        <locationY>2270</locationY>
         <collectionReference>Get_User_From_the_Members</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -454,7 +597,7 @@
         <name>Create_Flow_Interview_Records</name>
         <label>Create Flow Interview Records</label>
         <locationX>600</locationX>
-        <locationY>3602</locationY>
+        <locationY>3818</locationY>
         <inputAssignments>
             <field>Completed__c</field>
             <value>
@@ -492,7 +635,7 @@
         <name>Task_for_Working_Group_Approval</name>
         <label>Task for Working Group Approval</label>
         <locationX>446</locationX>
-        <locationY>2462</locationY>
+        <locationY>2570</locationY>
         <connector>
             <targetReference>Custom_Notification</targetReference>
         </connector>
@@ -545,7 +688,7 @@
         <name>Custom_Notification</name>
         <label>Custom Notification</label>
         <locationX>446</locationX>
-        <locationY>2570</locationY>
+        <locationY>2678</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Send_Custom_Notification_to_Working_Group</targetReference>
@@ -565,7 +708,7 @@
     <recordLookups>
         <name>Eligibility_Criteria</name>
         <label>Eligibility Criteria</label>
-        <locationX>325</locationX>
+        <locationX>407</locationX>
         <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -588,7 +731,7 @@
     <recordLookups>
         <name>Eligible_Funds</name>
         <label>Eligible Funds</label>
-        <locationX>325</locationX>
+        <locationX>407</locationX>
         <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -611,7 +754,7 @@
     <recordLookups>
         <name>Get_Case_Records</name>
         <label>Get Case Records</label>
-        <locationX>325</locationX>
+        <locationX>407</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -633,7 +776,7 @@
         <name>get_Rework_Task</name>
         <label>get Rework Task</label>
         <locationX>446</locationX>
-        <locationY>2786</locationY>
+        <locationY>3002</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Is_there_a_Rework_task</targetReference>
@@ -668,7 +811,7 @@
         <name>Get_Task_Record_type</name>
         <label>Get Task Record Type</label>
         <locationX>446</locationX>
-        <locationY>1646</locationY>
+        <locationY>1754</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_through_the_Working_Group_Members</targetReference>
@@ -689,7 +832,7 @@
         <name>Get_User_From_the_Members</name>
         <label>Get User From the Members</label>
         <locationX>446</locationX>
-        <locationY>2054</locationY>
+        <locationY>2162</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Users</targetReference>
@@ -710,7 +853,7 @@
         <name>Get_Working_Group_Member</name>
         <label>Get Working Group Member</label>
         <locationX>446</locationX>
-        <locationY>1538</locationY>
+        <locationY>1646</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Task_Record_type</targetReference>
@@ -731,7 +874,7 @@
         <name>Get_Working_Group_Queue</name>
         <label>Get Working Group Queue</label>
         <locationX>446</locationX>
-        <locationY>1430</locationY>
+        <locationY>1538</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Working_Group_Member</targetReference>
@@ -758,7 +901,7 @@
     <recordLookups>
         <name>Previous_Flow_Submission</name>
         <label>Previous Flow Submission</label>
-        <locationX>325</locationX>
+        <locationX>407</locationX>
         <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -795,7 +938,7 @@
     <recordLookups>
         <name>Program_Deliverable_Table</name>
         <label>Program Deliverable Table</label>
-        <locationX>325</locationX>
+        <locationX>407</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -819,7 +962,7 @@
         <name>Update_case_Record</name>
         <label>Update Case Record</label>
         <locationX>600</locationX>
-        <locationY>3494</locationY>
+        <locationY>3710</locationY>
         <connector>
             <targetReference>Create_Flow_Interview_Records</targetReference>
         </connector>
@@ -829,7 +972,7 @@
         <name>Update_Rework_Task</name>
         <label>Update Rework Task</label>
         <locationX>314</locationX>
-        <locationY>3110</locationY>
+        <locationY>3326</locationY>
         <connector>
             <targetReference>Assignment_of_Fields_for_Case</targetReference>
         </connector>
@@ -852,13 +995,55 @@
                 <name>Copy_1_of_Data_Measurement_and_Reporting_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
+                    <name>Copy_Program_Guideline_Link</name>
+                    <extensionName>c:lwcInputWEDC</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Please provide the URL Link for the Program Guideline template</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>type</name>
+                        <value>
+                            <stringValue>url</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>value</name>
+                        <value>
+                            <elementReference>Get_Case_Records.Program_Guideline_Link__c</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>readonlyInUse</name>
+                        <value>
+                            <elementReference>readOnly</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Get_Case_Records.RecordType.DeveloperName</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Program_Development_Process_New_Program</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
                     <name>Copy_1_of_Program_Type</name>
                     <extensionName>c:lwcInputWEDC</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>What type of program will this be? Grant, Tax credit, Loan, Other?</stringValue>
+                            <stringValue>What type of Award will this be? Grant, Tax credit, Loan, Other?</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1015,6 +1200,12 @@
                         <name>cb_singleRowSelection</name>
                         <value>
                             <stringValue>CB_FALSE</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>columnWraps</name>
+                        <value>
+                            <stringValue>Deliverable_Type__c:true, Deliverable_Definition__c:true</stringValue>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1435,6 +1626,12 @@
                             <stringValue>Eligibility_Item_Collection__c:What needs to be collected to qualify an eligible activity?, Item_Collection_Period__c:When will they be collected?</stringValue>
                         </value>
                     </inputParameters>
+                    <inputParameters>
+                        <name>columnWraps</name>
+                        <value>
+                            <stringValue>Eligibility_Criteria__c:true, Eligibility_Item_Collection__c:true, Item_Collection_Period__c:true</stringValue>
+                        </value>
+                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -1502,7 +1699,7 @@
                     <inputParameters>
                         <name>option</name>
                         <value>
-                            <stringValue>Yes;No</stringValue>
+                            <stringValue>Competitive;Non-competitive </stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1901,6 +2098,12 @@
                             <stringValue>CB_FALSE</stringValue>
                         </value>
                     </inputParameters>
+                    <inputParameters>
+                        <name>columnWraps</name>
+                        <value>
+                            <stringValue>Eligible_Use__c:true, Ineligible_Use__c:true</stringValue>
+                        </value>
+                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -2210,13 +2413,13 @@
     <screens>
         <name>Investment_Development</name>
         <label>Investment Development</label>
-        <locationX>600</locationX>
+        <locationX>765</locationX>
         <locationY>1106</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <connector>
-            <targetReference>Save_Screen</targetReference>
+            <targetReference>Count_Number_of_Rows</targetReference>
         </connector>
         <fields>
             <name>Data_Measurement_and_Reporting</name>
@@ -2226,13 +2429,61 @@
                 <name>Data_Measurement_and_Reporting_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
+                    <name>Program_Guideline_Link</name>
+                    <extensionName>c:lwcInputWEDC</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>type</name>
+                        <value>
+                            <stringValue>url</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Please provide the URL link for the Program Guideline template</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>value</name>
+                        <value>
+                            <elementReference>Get_Case_Records.Program_Guideline_Link__c</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>required</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>fieldLevelHelp</name>
+                        <value>
+                            <stringValue>Please provide URL Link starting with &quot;https://&quot; eg:  https://wedc.org</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Get_Case_Records.RecordType.DeveloperName</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Program_Development_Process_New_Program</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
                     <name>Program_Type</name>
                     <extensionName>c:lwcInputWEDC</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>What type of program will this be? Grant, Tax credit, Loan, Other?</stringValue>
+                            <stringValue>What type of Award will this be? Grant, Tax credit, Loan, Other?</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -2262,6 +2513,21 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <fields>
+                    <name>TableWarning1</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(237, 3, 3);&quot;&gt;*Please fill out the table below &lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>countRowsDeliverable</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <numberValue>0.0</numberValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
                 </fields>
                 <fields>
                     <name>ProgramDeliverableTable</name>
@@ -2425,6 +2691,12 @@
                         <name>defaultInputRecord</name>
                         <value>
                             <elementReference>ProgramDeliverableDefaultValue</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>columnWraps</name>
+                        <value>
+                            <stringValue>Deliverable_Type__c:true, Deliverable_Definition__c:true</stringValue>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2706,6 +2978,21 @@
                 <name>Eligibility_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
+                    <name>TableWarning2</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(250, 13, 13);&quot;&gt;*Please fill out the table below&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>countRowsEligibleCriteria</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <numberValue>0.0</numberValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
                     <name>EligibilityCriteriaTable</name>
                     <dataTypeMappings>
                         <typeName>T</typeName>
@@ -2869,6 +3156,12 @@
                             <elementReference>ProgramEligibilityDefaultValue</elementReference>
                         </value>
                     </inputParameters>
+                    <inputParameters>
+                        <name>columnWraps</name>
+                        <value>
+                            <stringValue>Eligibility_Criteria__c:true, Eligibility_Item_Collection__c:true, Item_Collection_Period__c:true</stringValue>
+                        </value>
+                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -2936,7 +3229,7 @@
                     <inputParameters>
                         <name>option</name>
                         <value>
-                            <stringValue>Yes;No</stringValue>
+                            <stringValue>Competitive;Non-competitive  </stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -3010,7 +3303,7 @@
                             <leftValueReference>Is_Competetive.value</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>
-                                <stringValue>Yes</stringValue>
+                                <stringValue>Competitive</stringValue>
                             </rightValue>
                         </conditions>
                     </visibilityRule>
@@ -3052,6 +3345,16 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Is_Competetive.value</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Competitive</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -3114,6 +3417,16 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Program_Type.value</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Loan</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
                 </fields>
                 <fields>
                     <name>CollateralRequirements</name>
@@ -3200,6 +3513,21 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <fields>
+                    <name>TableWarning3</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(241, 3, 3);&quot;&gt;*Please fill out the Table below&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>CountRowsEligibleFunds</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <numberValue>0.0</numberValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
                 </fields>
                 <fields>
                     <name>EligibleIneligibleTable</name>
@@ -3363,6 +3691,12 @@
                         <name>defaultInputRecord</name>
                         <value>
                             <elementReference>programEligibleFundDefaultValue</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>columnWraps</name>
+                        <value>
+                            <stringValue>Eligible_Use__c:true, Ineligible_Use__c:true</stringValue>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3668,46 +4002,76 @@
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithHeader</regionContainerType>
         </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
-        <name>Save_Screen</name>
-        <label>Save Screen</label>
-        <locationX>600</locationX>
-        <locationY>1214</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <connector>
-            <targetReference>Submit_for_Working_Group_Approval</targetReference>
-        </connector>
         <fields>
-            <name>Do_you_want_to_submit_your_work_for_Working_Group_Approval</name>
+            <name>SaveWork</name>
             <choiceReferences>Yes_this_looks_good</choiceReferences>
             <choiceReferences>No_I_want_to_save_and_revisit_my_work</choiceReferences>
             <dataType>String</dataType>
-            <fieldText>Do you want to submit your work for Working Group Approval?</fieldText>
-            <fieldType>DropdownBox</fieldType>
+            <fieldText>Do you want to submit your work for the Working Group approval?</fieldText>
+            <fieldType>RadioButtons</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
+        <nextOrFinishButtonLabel>Submit</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>199</locationX>
+        <locationX>281</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case_Records</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <textTemplates>
         <name>DeliverableOutputText</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
         <text>&lt;p&gt;&lt;strong&gt;Identifying Program Deliverables or Outputs:&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Start by listing the&amp;nbsp;specific deliverables or outputs&amp;nbsp;the program is expected to produce. These are tangible products or services resulting from the program&apos;s activities, like reports, events, training sessions, or developed tools.&amp;nbsp;&lt;/li&gt;&lt;li&gt;Clearly defining these outputs is essential for understanding what the program will concretely achieve in the short term.&lt;/li&gt;&lt;/ul&gt;</text>
     </textTemplates>
+    <textTemplates>
+        <name>EmailBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Greetings!&lt;/p&gt;We hope this email finds you well.&lt;/p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;We are writing to request your review and approval of the related case at your earliest convenience. Your approval is crucial as it will automatically generate a subsequent task, allowing us to proceed with the next steps efficiently.&lt;/p&gt;&lt;br&gt;&lt;/p&gt;Please find the details of the case attached for your perusal. If you have any questions or require additional information, do not hesitate to reach out.&lt;/p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Program Name: &lt;/strong&gt;{!Get_Case_Records.Program_Name__c}&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Program Case URL :&lt;/strong&gt; https://wedc.lightning.force.com/{!Get_Case_Records.Id}&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Thank you for your prompt attention to this matter.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;--Please do not reply to this email--&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>NotificationBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Please review the {!Get_Case_Records.Program_Name__c} case&apos;s Investment Development form and complete the task assigned to you. Please add any additional any decision notes in the chatter feed or while completing the task.</text>
+    </textTemplates>
+    <variables>
+        <name>countRowsDeliverable</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>countRowsEligibleCriteria</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>CountRowsEligibleFunds</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
     <variables>
         <name>EligibilityCriteriaCollection</name>
         <dataType>SObject</dataType>
