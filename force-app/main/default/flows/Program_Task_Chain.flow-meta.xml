@@ -1902,6 +1902,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Task_Record_Type.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Subject</field>
             <value>
                 <stringValue>EnABLE System Integeration</stringValue>
@@ -1946,6 +1952,12 @@
             <field>OwnerId</field>
             <value>
                 <elementReference>Get_Intacct_System_Integration_User.SetupOwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Task_Record_Type.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1996,6 +2008,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Task_Record_Type.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Subject</field>
             <value>
                 <stringValue>Marketing Integration</stringValue>
@@ -2040,6 +2058,12 @@
             <field>OwnerId</field>
             <value>
                 <elementReference>Get_Program_Hub_Integration_User.SetupOwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Task_Record_Type.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2195,6 +2219,12 @@
             <field>OwnerId</field>
             <value>
                 <elementReference>Get_Salesforce_Integration_User.SetupOwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Task_Record_Type.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
