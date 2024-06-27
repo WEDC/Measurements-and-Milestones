@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Decision_Action__c</fullName>
+    <description>Decision actions for tasks related to a new or change to a program</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Reviewing and Accepting the task will trigger subsequent tasks</inlineHelpText>
+    <label>Decision Action</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Reviewed and Accepted</fullName>
+                <default>false</default>
+                <label>Reviewed and Accepted</label>
+            </value>
+            <value>
+                <fullName>Rework</fullName>
+                <default>false</default>
+                <label>Rework</label>
+            </value>
+            <value>
+                <fullName>Declined Submission</fullName>
+                <default>false</default>
+                <label>Declined Submission</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,3104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Program_Proposal</fullName>
+    <active>true</active>
+    <businessProcess>Internal</businessProcess>
+    <description>New Program Proposal</description>
+    <label>New Program Proposal</label>
+    <picklistValues>
+        <picklist>Application_Type__c</picklist>
+        <values>
+            <fullName>Early Stage Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ExporTech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Business Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Main Street</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PDS with Bonding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QVF</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recalled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Background_Check_Status__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Business_or_Community__c</picklist>
+        <values>
+            <fullName>Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consortium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CDBG_LMI_Survey__c</picklist>
+        <values>
+            <fullName>Attached</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Created</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deployed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CDBG_National_Objective__c</picklist>
+        <values>
+            <fullName>LMA - Low to Moderate Income Area Benefit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMC - Low to Moderate Income Limited Clientele</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMJ - Low to Moderate Income Jobs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SBA - Slums%2FBlight Area Benefit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SBS - Slums%2FBlight Spot Benefit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>URG - Urgent Need</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Can_WEDC_Implement__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cert_Bankruptcy__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cert_Charges__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cert_Foreign_Owned__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cert_Lawsuit__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cert_Tax_Liens__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cert_Type_of_Business__c</picklist>
+        <values>
+            <fullName>C Corp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LLP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Profit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partnership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>S Corp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sole Proprietor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Commitment_Letter_Status__c</picklist>
+        <values>
+            <fullName>Created</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Return</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received Signed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent Denial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DOR_Delinquent_Check__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Division__c</picklist>
+        <values>
+            <fullName>Business and Industry Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit and Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Economic and Community Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entrepreneurship and Innovation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance and Administration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Business Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing and Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office of Public Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process Improvement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Event_Budget_Area__c</picklist>
+        <values>
+            <fullName>1000 Executive Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1100 Legal Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2000 Entrepreneurship and Innovation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2100 Early Stage Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2200 Entrepreneurship Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3000 Economic and Community Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3100 Regional Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3200 Business Underwriting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3300 Community Infrastructure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3400 Downtown Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4000 Business and Industry Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4100 B %26 I Development - Sector Managers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4200 Minority Industry Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4300 International Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4400 Research</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5000 Marketing %26 Public Affairs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5100 Governmental Relations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5200 Research and Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5300 Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5400 Grant Administration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5500 Events and Training Coordination</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5600 Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5700 Marketing Forward WI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6000 Administration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6100 Human Resources</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Event_Budget_Location__c</picklist>
+        <values>
+            <fullName>1000 WHEDA Building</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2000 Eau Claire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3000 Pewaukee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4000 Milwaukee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5000 Oshkosh</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Event_Budget_Project__c</picklist>
+        <values>
+            <fullName>0000 N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>0130 2012 BIO Int</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>0140 2012 Marketplace</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>0150 2012 Main Street</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Event_Budget__c</picklist>
+        <values>
+            <fullName>%241%2C000 - %242%2C500</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%242%2C500 - %245%2C000</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24250 - %24500</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24500 - %241%2C000</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Up to %24250</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Event_Meals_Needed__c</picklist>
+        <values>
+            <fullName>Afternoon Break</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breakfast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dinner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lunch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Morning Break</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reception</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Event_Room_Setup__c</picklist>
+        <values>
+            <fullName>Banquet Rounds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Classroom Style</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conference%2FBoardroom Style</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exhibition Space</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reception or Cocktail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theater Style</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U-Shape</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Event_Technical_and_AV_Needs__c</picklist>
+        <values>
+            <fullName>DVD Player</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Projector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laptop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microphone%28s%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Screen%28s%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Event_VIP_Event__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>File_Location__c</picklist>
+        <values>
+            <fullName>Onsite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Records Center</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Financial_Aid_Use__c</picklist>
+        <values>
+            <fullName>Aids</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Ops</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Frequency_Training_Request__c</picklist>
+        <values>
+            <fullName>One-time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recurring</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gift_Card_Type__c</picklist>
+        <values>
+            <fullName>Amazon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Barriques</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home Depot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kohl%27s</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Target</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WEDC Logo Wear</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Impact_Level__c</picklist>
+        <values>
+            <fullName>Impactful</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minimal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IsLoan__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_Business_or_Community_Application__c</picklist>
+        <values>
+            <fullName>Business Application</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community Application</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_there_a_budget_for_this__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Legal_Record_Format__c</picklist>
+        <values>
+            <fullName>for inspection at WEDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>in electronic format %28where feasible%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>in hard copy</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Legal_Record_Related_To__c</picklist>
+        <values>
+            <fullName>Litigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MRC_Decision__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Marketing_Material_Item__c</picklist>
+        <values>
+            <fullName>Interim Annual Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laptop Kiosk 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laptop Kiosk 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pop Up Banners %28Set of 4%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Marketing_Material_Pickup_or_Ship__c</picklist>
+        <values>
+            <fullName>Pickup at Madison Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ship to address below</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Network__c</picklist>
+        <values>
+            <fullName>WEDC</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_Assistance_Type_1_Category__c</picklist>
+        <values>
+            <fullName>-- Financial Assistance --</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>-- Technical Assistance --</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bonding Authority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Export Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extended Enterprise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foreign Direct Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industry Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investor Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Main Street</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Credit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_Assistance_Type_1__c</picklist>
+        <values>
+            <fullName>Agent%2FDistributor Search</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Answered Question</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BR%26E Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Background Check</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brownfields Redevelopment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Forgivable Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Planning Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Public Facilities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Public Facilities for Economic Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Technical Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Capacity Building Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Capital Catalyst</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Certificate of Free Sale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Certified Sites Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connect Communities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting - Market Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting - New to Export</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customs Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development Opportunity Zone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMSI Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Economic Development Tax Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Economic Impact Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Zone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ExporTech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Export Certificates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Export Development Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Packaging Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financing by Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foreign Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-country Appointments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound Buyers%E2%80%99 Mission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound Delegation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial Revenue Bond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Market Access Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investor Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jobs Tax Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Layoff Aversion Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan Guarantee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LocateWI Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Main Street</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Market Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Market Research</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meet Information Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Midwestern Disaster Area Bond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minority RLF Deployment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-WEDC Application Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Research Project</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outreach and Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified Energy Conservation Bond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified New Business Venture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified New Business Venture Capital Gains</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified Venture Fund Certification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral to Non-Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral to Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regional RLF Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rendering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research and Data Collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SSBCI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Assessment Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Search Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Forgivable Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Trade and Export Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strategy Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Target Industry Project</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Mission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Venture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training Tax Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workforce Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workforce Training Grant</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_Assistance_Type_2_Category__c</picklist>
+        <values>
+            <fullName>-- Financial Assistance --</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>-- Technical Assistance --</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bonding Authority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Export Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extended Enterprise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foreign Direct Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industry Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investor Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Main Street</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Credit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_Assistance_Type_2__c</picklist>
+        <values>
+            <fullName>Agent%2FDistributor Search</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Answered Question</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BR%26E Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Background Check</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brownfields Redevelopment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Forgivable Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Planning Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Public Facilities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Public Facilities for Economic Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Technical Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Capacity Building Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Capital Catalyst</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Certificate of Free Sale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Certified Sites Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connect Communities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting - Market Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting - New to Export</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customs Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development Opportunity Zone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMSI Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Economic Development Tax Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Economic Impact Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Zone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ExporTech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Export Certificates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Export Development Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Packaging Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financing by Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foreign Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-country Appointments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound Buyers%E2%80%99 Mission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound Delegation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial Revenue Bond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Market Access Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investor Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jobs Tax Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Layoff Aversion Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan Guarantee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LocateWI Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Main Street</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Market Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Market Research</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meet Information Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Midwestern Disaster Area Bond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minority RLF Deployment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-WEDC Application Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Research Project</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outreach and Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified Energy Conservation Bond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified New Business Venture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified New Business Venture Capital Gains</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified Venture Fund Certification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral to Non-Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral to Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regional RLF Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rendering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research and Data Collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SSBCI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Assessment Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Search Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Forgivable Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Trade and Export Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strategy Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Target Industry Project</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Mission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Venture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training Tax Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workforce Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workforce Training Grant</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_Assistance_Type_3_Category__c</picklist>
+        <values>
+            <fullName>-- Financial Assistance --</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>-- Technical Assistance --</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bonding Authority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Export Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extended Enterprise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foreign Direct Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industry Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investor Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Main Street</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Credit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_Assistance_Type_3__c</picklist>
+        <values>
+            <fullName>Agent%2FDistributor Search</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Answered Question</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BR%26E Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Background Check</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brownfields Redevelopment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Forgivable Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Planning Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Public Facilities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Public Facilities for Economic Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDBG Technical Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Capacity Building Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Capital Catalyst</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Certificate of Free Sale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Certified Sites Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connect Communities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting - Market Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting - New to Export</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customs Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development Opportunity Zone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMSI Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Economic Development Tax Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Economic Impact Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Zone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ExporTech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Export Certificates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Export Development Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Packaging Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financing by Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foreign Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-country Appointments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound Buyers%E2%80%99 Mission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound Delegation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial Revenue Bond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Market Access Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investor Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jobs Tax Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Layoff Aversion Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan Guarantee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LocateWI Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Main Street</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Market Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Market Research</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meet Information Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Midwestern Disaster Area Bond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minority RLF Deployment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-WEDC Application Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Research Project</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outreach and Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified Energy Conservation Bond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified New Business Venture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified New Business Venture Capital Gains</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified Venture Fund Certification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral to Non-Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral to Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regional RLF Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rendering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research and Data Collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SSBCI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Assessment Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Search Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Forgivable Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Trade and Export Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strategy Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Target Industry Project</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Mission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Venture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training Tax Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workforce Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workforce Training Grant</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_CCAP_Check__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_Credit_Check__c</picklist>
+        <values>
+            <fullName>Attached</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_DBRA_Check__c</picklist>
+        <values>
+            <fullName>Attached</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_EPLS_Check__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_ERR_Check__c</picklist>
+        <values>
+            <fullName>Attached</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_Loan_Docs_Status__c</picklist>
+        <values>
+            <fullName>Attached</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_Security_Filing_Status__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_Staff_Review_Status__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_W9_Check__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OM_WDFI_Check__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Customer Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Walk-in</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Partner__c</picklist>
+        <values>
+            <fullName>False</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>True</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Portfolio_Addition__c</picklist>
+        <values>
+            <fullName>Permanent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pilot</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Procurement_Type__c</picklist>
+        <values>
+            <fullName>Best Judgment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DeMinimis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event%2FTrade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Formal Solicitation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request for Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Simplified Bidding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Talent Retention and Attraction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiver</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Program_Type__c</picklist>
+        <values>
+            <fullName>Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Credit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Case Created Accidentally</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Denied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Declined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>File Already Checked Out</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resolved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Locate File</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withdrawn</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Record_Cancellation_Reason__c</picklist>
+        <values>
+            <fullName>No Longer Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Restart Needed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>State_Debarred_Check__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_type__c</picklist>
+        <values>
+            <fullName>1512 Audit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ARED Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accounts %26 Contacts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amendment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bankruptcy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Best Judgment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Board Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closeout</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract ADMT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contracting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delete Page</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discipline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Departure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Termination - Involuntary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Termination - Voluntary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>File Retrieval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Servicing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Formal Solicitation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Functional Enhancement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HR Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HR Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Handbook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implement Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inter-Agency MOUs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LocateInWisconsin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Merge Records</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Hire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Page</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open Records Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Management 2%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Partner Agreements</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PII</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Page Addition%2FDeletion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Assessment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Evaluations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personnel Policies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Position Add or Subtract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Position Description</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Preliminary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Procurement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchasing%2FAccounting Policies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QVF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Questions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RLF Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recruitment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Report Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporting Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports %26 Dashboards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retirement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salary Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Significant Guidelines Development and Modification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Simplified Bidding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Audit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spelling%2FGrammar Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strategic Partners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Survey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Certification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Guidelines Development and Modification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Underwriting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Update Existing Page</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrap-up</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Surveyable__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Accounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Administration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Award Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contacts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Quality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Downtown Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Early Stage Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gov Relations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Growth or Enhancement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Libraries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance%2FUtility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Application</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organizational Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pearl</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process Improvement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Procurement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Published Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RLF Semi-annual Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regional Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports and Dashboards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research %26 Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retrieval Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Fault</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Underwriting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venture Capital Authority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website Request</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>om_Approval_Level_Required__c</picklist>
+        <values>
+            <fullName>Executive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VP</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>pCounty__c</picklist>
+        <values>
+            <fullName>-- Outside Wisconsin --</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>-- Wisconsin County --</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adams</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ashland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Barron</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bayfield</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Buffalo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Burnett</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calumet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chippewa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clark</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Columbia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crawford</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dane</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dodge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Door</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Douglas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dunn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eau Claire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Florence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fond du Lac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foreign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Forest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green Lake</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iowa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iron</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jackson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jefferson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Juneau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kenosha</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kewaunee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>La Crosse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lafayette</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Langlade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lincoln</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manitowoc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marathon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marinette</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marquette</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Menominee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Milwaukee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monroe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multiple</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oconto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oneida</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other State</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outagamie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ozaukee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pepin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pierce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Polk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Racine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Richland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rock</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rusk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sauk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sawyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shawano</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sheboygan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>St%2E Croix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taylor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trempealeau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vernon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vilas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Walworth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Washburn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Washington</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waukesha</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waupaca</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waushara</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winnebago</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wood</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
